@@ -1,0 +1,118 @@
+snippet cmt
+// -----------------------------------------------------------------------------
+//     - $1-
+// -----------------------------------------------------------------------------$0
+endsnippet
+
+snippet impit
+impl Iterator for $1 {
+	type Item = $0;
+
+	fn next(&mut self) -> Option<Self::Item> {
+		None
+	}
+}
+endsnippet
+
+snippet db "debug macro"
+dbg!(${0:${VISUAL}});
+endsnippet
+
+
+snippet react "impl react"
+fn react(&mut self, reaction: Reaction<Self::Input>) -> Reaction<Self::Output> {
+	use Reaction::*;
+	match reaction {
+		Value(val) => {
+			Continue
+		}
+		Event(event) => {
+			event.into()
+		}
+		Continue => Continue,
+	}
+}
+endsnippet
+
+snippet gdclass "Create a Godot NativeObject"
+#[derive(NativeClass)]
+#[inherit($2)]
+pub struct $1 {
+}
+
+#[methods]
+impl $1 {
+    pub fn new(_owner: &$2) -> Self {
+        Self { }
+    }
+
+    #[export]
+    pub fn _ready(&self, owner: &$2) {
+    }
+
+    #[export]
+    pub fn _unhandled_input(&self, owner: &$2, event: Ref<InputEvent>) {
+    }
+
+    #[export]
+    pub fn _process(&self, owner: &$2, delta: f64) {
+    }
+
+    #[export]
+    pub fn _physics_process(&self, owner: &$2, delta: f64) {
+    }
+}$0
+endsnippet
+
+snippet gdinit "Bootstrap Godot Native init"
+use gdnative::*;
+
+
+fn init(handle: init::InitHandle) {
+    handle.add_class::<>();
+}
+
+godot_gdnative_init!();
+godot_nativescript_init!(init);
+godot_gdnative_terminate!();
+endsnippet
+
+snippet usegd "Boilerplate gdnative use statement"
+use gdnative::prelude::*;
+use gdnative::api::InputEvent;
+endsnippet
+
+snippet default "debug macro"
+impl Default for ${0:${VISUAL}} {
+	fn default() {
+		Self {
+		}
+	}
+}
+endsnippet
+
+
+snippet main "main function"
+fn main() {
+${0:${VISUAL}}
+}
+endsnippet
+
+
+snippet new "new function"
+pub fn new() -> Self {
+	Self {
+		${0:${VISUAL}}
+	}
+}
+endsnippet
+
+
+snippet legsys "Create a Legion system"
+fn $1() -> Box<dyn Runnable> {
+	SystemBuilder::new("$1")
+		.build_thread_local(|cmd, world, resources, query| {
+			$0
+		})
+}
+endsnippet
