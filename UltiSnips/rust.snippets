@@ -106,13 +106,3 @@ pub fn new() -> Self {
 	}
 }
 endsnippet
-
-
-snippet legsys "Create a Legion system"
-fn $1() -> Box<dyn Runnable> {
-	SystemBuilder::new("$1")
-		.build_thread_local(|cmd, world, resources, query| {
-			$0
-		})
-}
-endsnippet
