@@ -310,7 +310,7 @@ autocmd BufNewFile,BufRead *.sl set ft=sl
 set grepprg=rg\ --vimgrep
 def RipGrepping(search_term: string): void
     var out = "this is working" .. search_term
-    silent! exe 'grep! -i ' .. search_term
+    silent! exe 'grep! -i "' .. search_term .. '"'
     redraw!
     if len(getqflist()) > 0
         :copen
