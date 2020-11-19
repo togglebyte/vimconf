@@ -230,8 +230,8 @@ set guitablabel=%{GuiTabLabel()}
 "     --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
 "     --color: Search color options
 " -----------------------------------------------------------------------------
-nmap <C-p> :FZF<CR>
-command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+" nmap <C-p> :FZF<CR>
+" command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 nmap <C-f> :Find 
 
 " -----------------------------------------------------------------------------
@@ -301,3 +301,19 @@ autocmd BufNewFile,BufRead *.vert set ft=sl
 autocmd BufNewFile,BufRead *.frag set ft=sl
 autocmd BufNewFile,BufRead *.comp set ft=sl
 autocmd BufNewFile,BufRead *.sl set ft=sl
+
+" -----------------------------------------------------------------------------
+"     - Grepping -
+"     Grepping with ripgrep.
+"     If you don't have ripgrep installed you are in trouble!
+" -----------------------------------------------------------------------------
+set grepprg=rg\ --vimgrep
+def RipGrepping(search_term: string): void
+    var out = "this is working" .. search_term
+    silent! exe 'grep! -i ' .. search_term
+    redraw!
+    if len(getqflist()) > 0
+        :copen
+    endif
+enddef
+command! -nargs=* Find call RipGrepping(<q-args>)
