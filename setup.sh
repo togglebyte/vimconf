@@ -11,7 +11,6 @@ PACKAGES=(
     ["vim-rhubarb"]="tpope"
     ["vim-surround"]="tpope"
     ["vim-commentary"]="tpope"
-    ["fzf.vim"]="junegunn"
     ["ultisnips"]="SirVer"
     ["vim-highlightedyank"]="machakann"
     ["vimwiki"]="vimwiki"
