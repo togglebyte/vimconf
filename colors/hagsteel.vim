@@ -5,8 +5,6 @@ highlight ColorColumn  ctermbg=234
 highlight LineNr       ctermbg=234 ctermfg=14
 highlight CursorLineNr ctermbg=23 ctermfg=7
 highlight CursorLine   ctermbg=236
-highlight StatusLineNC ctermbg=238 ctermfg=0
-highlight StatusLine   ctermbg=240 ctermfg=12
 highlight IncSearch    ctermbg=3   ctermfg=1
 highlight Search       ctermbg=1   ctermfg=3
 highlight Visual       ctermbg=1   ctermfg=16
@@ -35,11 +33,12 @@ highlight DebuggedLineSign ctermfg=47
 highlight BreakPointSign ctermfg=32 
 
 " Staus line
-highlight StatusLine ctermbg=7 ctermfg=8 
-highlight ModeInsert ctermbg=158 ctermfg=8 
-highlight ModeVisual ctermbg=216 ctermfg=8 
-highlight StatusError ctermfg=1 ctermbg=8 cterm=bold
-highlight StatusWarning ctermfg=3 ctermbg=8 cterm=bold
+highlight StatusLine    ctermbg=0   ctermfg=6
+highlight StatusLineNC  ctermbg=7   ctermfg=236
+highlight ModeInsert    ctermbg=158 ctermfg=8 
+highlight ModeVisual    ctermbg=216 ctermfg=8 
+highlight StatusError   ctermfg=1   ctermbg=8 cterm=bold
+highlight StatusWarning ctermfg=3   ctermbg=8 cterm=bold
 
 " Tab line
 highlight TabLineFill ctermbg=234 ctermfg=7 term=NONE cterm=NONE

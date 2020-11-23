@@ -69,11 +69,18 @@ set noru
 set hidden
 noremap <F1> :echo "--- lol, accidental F1 ---"<CR>
 
+let g:netrw_banner=0
+
 " -----------------------------------------------------------------------------
 "     - Ignore the following when expanding wildcards -
 " -----------------------------------------------------------------------------
 set wildignore+=*/target/*,*/tmp/*,*.swp,*.pyc,*__pycache__/* 
 
+" -----------------------------------------------------------------------------
+"     - Error / warning nav -
+" -----------------------------------------------------------------------------
+nmap <C-p> :cprevious<CR>
+nmap <C-n> :cnext<CR>
 
 " -----------------------------------------------------------------------------
 "     - Resizing panes -
@@ -214,25 +221,6 @@ endfunction
 let g:UltiSnipsExpandTrigger="<leader>t"
 
 set guitablabel=%{GuiTabLabel()}
-" -----------------------------------------------------------------------------
-"     - FZF -
-"     Fuzzy file search with ripgrep
-"
-"     Additional flags:
-"     --column: Show column number
-"     --line-number: Show line number
-"     --no-heading: Do not show file headings in results
-"     --fixed-strings: Search term as a literal string
-"     --ignore-case: Case insensitive search
-"     --no-ignore: Do not respect .gitignore, etc...
-"     --hidden: Search hidden files and folders
-"     --follow: Follow symlinks
-"     --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
-"     --color: Search color options
-" -----------------------------------------------------------------------------
-" nmap <C-p> :FZF<CR>
-" command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
-nmap <C-f> :Find 
 
 " -----------------------------------------------------------------------------
 "     - Copy to system clipboard -
@@ -275,10 +263,12 @@ let g:vebugger_currentline_text=''
 " -----------------------------------------------------------------------------
 autocmd BufNewFile,BufRead *.org set ft=org
  
+
 " -----------------------------------------------------------------------------
 "     - VimWiki -
 " -----------------------------------------------------------------------------
 let g:vimwiki_list = [{'path': '~/org', 'syntax': 'markdown', 'ext': '.org'}]
+
 
 " -----------------------------------------------------------------------------
 "     - Date functions -
@@ -294,6 +284,7 @@ endfunction
 
 :command! DS call InsertDateStamp()
 
+
 " -----------------------------------------------------------------------------
 "     - Shader lang -
 " -----------------------------------------------------------------------------
@@ -301,6 +292,7 @@ autocmd BufNewFile,BufRead *.vert set ft=sl
 autocmd BufNewFile,BufRead *.frag set ft=sl
 autocmd BufNewFile,BufRead *.comp set ft=sl
 autocmd BufNewFile,BufRead *.sl set ft=sl
+
 
 " -----------------------------------------------------------------------------
 "     - Grepping -
@@ -317,3 +309,5 @@ def RipGrepping(search_term: string): void
     endif
 enddef
 command! -nargs=* Find call RipGrepping(<q-args>)
+
+nmap <C-f> :Find 

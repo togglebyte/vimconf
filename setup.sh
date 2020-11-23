@@ -21,6 +21,9 @@ PACKAGES=(
     ["vim-vebugger"]="hagsteel"
     ["vimproc.vim"]="Shougo"
     # ["completor.vim"]="maralla"
+
+    # Zig
+    ["zig.vim"]="ziglang"
 )
 
 for package in ${!PACKAGES[@]}

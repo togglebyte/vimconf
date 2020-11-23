@@ -4,8 +4,7 @@
 set nospell
 set nowrap
 set textwidth=99
-" set makeprg=cargo\ check\ --message-format=short
-" set keywordprg=:vertical\ term\ ++close\ rusty-man
+set makeprg=cargo\ check\ --message-format=short
 
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
@@ -29,7 +28,7 @@ endfunction
 "     - Key mappings -
 " -----------------------------------------------------------------------------
 nmap <S-k> :call RustDocs()<CR>
-nmap <C-b> :!clear;cargo check<CR>
+nmap <C-b> :make<CR>
 nmap <Leader>} ysiw}
 nmap <Leader>x :!clear;cargo run<CR>
 nmap <Leader>X :!clear;env RUST_BACKTRACE=1 cargo run<CR>
