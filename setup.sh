@@ -7,8 +7,6 @@ mkdir -p "${PACK_DIR}" 2>/dev/null
 echo "Adding packages"
 declare -A PACKAGES
 PACKAGES=(
-    ["vim-fugitive"]="tpope"
-    ["vim-rhubarb"]="tpope"
     ["vim-surround"]="tpope"
     ["vim-commentary"]="tpope"
     ["ultisnips"]="SirVer"

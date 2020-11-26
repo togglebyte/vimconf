@@ -132,8 +132,6 @@ function s:GetFileType()
         return ""
     elseif &filetype ==# "markdown"
         return ""
-    elseif &filetype ==# "org"
-        return ""
     elseif &filetype ==# "scss"
         return ""
     elseif &filetype ==# "scala"
@@ -257,17 +255,9 @@ let g:vebugger_currentline_text=''
 
 
 " -----------------------------------------------------------------------------
-"     - Org -
-"     This is not really org mode, however I got in the habbit
-"     of calling them org files. These are just notes
-" -----------------------------------------------------------------------------
-autocmd BufNewFile,BufRead *.org set ft=org
- 
-
-" -----------------------------------------------------------------------------
 "     - VimWiki -
 " -----------------------------------------------------------------------------
-let g:vimwiki_list = [{'path': '~/org', 'syntax': 'markdown', 'ext': '.org'}]
+let g:vimwiki_list = [{'path': '~/wiki', 'syntax': 'markdown', 'ext': '.md'}]
 
 
 " -----------------------------------------------------------------------------
