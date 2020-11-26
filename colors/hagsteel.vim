@@ -15,6 +15,8 @@ highlight SpellCap     ctermbg=4   ctermfg=15
 highlight VertSplit    ctermbg=6   ctermfg=0
 highlight MatchParen   ctermbg=241
 highlight SpellLocal   ctermbg=55
+highlight Search       ctermfg=15 ctermbg=52
+
 
 " highlight clear MatchParen
 highlight DiffAdd      ctermbg=4   ctermfg=15
@@ -44,7 +46,3 @@ highlight StatusWarning ctermfg=3   ctermbg=8 cterm=bold
 highlight TabLineFill ctermbg=234 ctermfg=7 term=NONE cterm=NONE
 highlight TabLine ctermbg=236 ctermfg=230   term=NONE cterm=NONE
 highlight TabLineSel ctermbg=240 ctermfg=7  term=NONE cterm=bold
-
-" Ale
-highlight ALEErrorSign ctermfg=1 ctermbg=NONE
-highlight ALEWarningSign ctermfg=2 ctermbg=NONE
