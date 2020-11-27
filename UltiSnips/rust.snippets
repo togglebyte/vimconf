@@ -106,3 +106,24 @@ pub fn new() -> Self {
 	}
 }
 endsnippet
+
+
+snippet benchbase
+#![feature(test)]
+extern crate test;
+use test::bench::{Bencher, black_box};
+
+#[bench]
+fn $1(b: &mut Bencher) {
+    b.iter(|| {
+    });
+}
+endsnippet
+
+snippet bench
+#[bench]
+fn $1(b: &mut Bencher) {
+    b.iter(|| {
+    });
+}
+endsnippet
