@@ -4,10 +4,7 @@
 set nospell
 set nowrap
 set textwidth=99
-set makeprg=cargo\ check\ --message-format=human
-
-autocmd QuickFixCmdPost [^l]* nested cwindow
-autocmd QuickFixCmdPost    l* nested lwindow
+set makeprg=cargo\ check
 
 " -----------------------------------------------------------------------------
 "     - Rust help -

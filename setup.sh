@@ -22,6 +22,9 @@ PACKAGES=(
 
     # Zig
     ["zig.vim"]="ziglang"
+
+    # Haskell
+    # ["haskell-vim"]="neovimhaskell"
 )
 
 for package in ${!PACKAGES[@]}
