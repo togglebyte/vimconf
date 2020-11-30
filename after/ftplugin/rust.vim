@@ -4,7 +4,7 @@
 set nospell
 set nowrap
 set textwidth=99
-set makeprg=cargo\ check
+set makeprg=cargo
 
 " -----------------------------------------------------------------------------
 "     - Rust help -
@@ -25,7 +25,7 @@ endfunction
 "     - Key mappings -
 " -----------------------------------------------------------------------------
 nmap <S-k> :call RustDocs()<CR>
-nmap <C-b> :make<CR>
+nmap <C-b> :make check --message-format=short<CR>
 nmap <Leader>} ysiw}
 nmap <Leader>x :!clear;cargo run<CR>
 nmap <Leader>X :!clear;env RUST_BACKTRACE=1 cargo run<CR>
