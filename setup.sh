@@ -21,10 +21,13 @@ PACKAGES=(
     # ["completor.vim"]="maralla"
 
     # Zig
-    ["zig.vim"]="ziglang"
+    # ["zig.vim"]="ziglang"
 
     # Haskell
     # ["haskell-vim"]="neovimhaskell"
+
+    # Elixir
+    ["vim-elixir"]="elixir-editors"
 )
 
 for package in ${!PACKAGES[@]}

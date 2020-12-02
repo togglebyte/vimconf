@@ -25,7 +25,7 @@ endfunction
 "     - Key mappings -
 " -----------------------------------------------------------------------------
 nmap <S-k> :call RustDocs()<CR>
-nmap <C-b> :make check --message-format=short<CR>
+nmap <C-b> :make check<CR>
 nmap <Leader>} ysiw}
 nmap <Leader>x :!clear;cargo run<CR>
 nmap <Leader>X :!clear;env RUST_BACKTRACE=1 cargo run<CR>

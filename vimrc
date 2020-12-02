@@ -182,6 +182,8 @@ function s:GetFileType()
         return ""
     elseif &filetype ==# "scala"
         return ""
+    elseif &filetype ==# "elixir"
+        return ""
     else
         return "%y" 
 endfunction
@@ -315,14 +317,13 @@ function! InsertDateStamp()
     let l:date = system('date +\%F')
     let l:oneline_date = split(date, "\n")[0]
     execute "normal! a" . oneline_date . "\<Esc>"
-    " call append(line('.'), oneline_date)
 endfunction
 
 :command! DS call InsertDateStamp()
 
 
 " -----------------------------------------------------------------------------
-"     - Shader lang -
+"     - File types -
 " -----------------------------------------------------------------------------
 autocmd BufNewFile,BufRead *.vert set ft=sl
 autocmd BufNewFile,BufRead *.frag set ft=sl
@@ -336,13 +337,14 @@ autocmd BufNewFile,BufRead *.sl set ft=sl
 "     If you don't have ripgrep installed you are in trouble!
 " -----------------------------------------------------------------------------
 set grepprg=rg\ --vimgrep
-def RipGrepping(search_term: string): void
-    silent! exe 'grep! -i "' .. search_term .. '"'
+
+function RipGrepping(search_term)
+    silent! exe 'grep! -i  "' . a:search_term . '"'
     redraw!
-    if len(getqflist()) > 0
+    if len(getqflist()) > 0 
         :copen
     endif
-enddef
+endfunction
 command! -nargs=* Find call RipGrepping(<q-args>)
 
 nmap <C-f> :Find 
