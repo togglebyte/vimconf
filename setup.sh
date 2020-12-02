@@ -12,6 +12,7 @@ PACKAGES=(
     ["ultisnips"]="SirVer"
     ["vim-highlightedyank"]="machakann"
     ["vimwiki"]="vimwiki"
+    ["fzf.vim"]="junegunn"
 
     # Rust
     ["rust.vim"]="rust-lang"
@@ -28,6 +29,9 @@ PACKAGES=(
 
     # Elixir
     ["vim-elixir"]="elixir-editors"
+    
+    # OCaml
+    ["vim-ocaml"]="ocaml"
 )
 
 for package in ${!PACKAGES[@]}
