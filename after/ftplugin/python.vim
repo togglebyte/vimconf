@@ -7,5 +7,6 @@ setl nosmartindent
 
 " Keybindings
 nmap <C-b> :!clear;./manage.py test<CR>
+nmap <Leader>x :!clear;python %<CR>
 
 setlocal completeopt-=preview

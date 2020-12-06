@@ -176,6 +176,8 @@ function s:GetFileType()
         return ""
     elseif &filetype ==# "markdown"
         return ""
+    elseif &filetype ==# "vimwiki"
+        return ""
     elseif &filetype ==# "scss"
         return ""
     elseif &filetype ==# "scala"
