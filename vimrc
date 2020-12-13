@@ -339,7 +339,7 @@ autocmd BufNewFile,BufRead *.sl set ft=sl
 set grepprg=rg\ --vimgrep
 
 function RipGrepping(search_term)
-    silent! exe 'grep! -i  "' . a:search_term . '"'
+    silent! exe 'grep! -i -F "' . a:search_term . '"'
     redraw!
     if len(getqflist()) > 0 
         :copen

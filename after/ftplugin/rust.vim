@@ -25,7 +25,7 @@ endfunction
 "     - Key mappings -
 " -----------------------------------------------------------------------------
 nmap <S-k> :call RustDocs()<CR>
-nmap <C-b> :make check<CR>
+nmap <C-b> :!clear;cargo check<CR>
 nmap <Leader>} ysiw}
 nmap <Leader>x :!clear;cargo run<CR>
 nmap <Leader>X :!clear;env RUST_BACKTRACE=1 cargo run<CR>
@@ -34,7 +34,7 @@ nmap <Leader>b :!clear;cargo test -- --nocapture<CR>
 nmap <Leader>B :!clear;env RUST_BACKTRACE=1 cargo test -- --nocapture<CR>
 nmap gd <Plug>(rust-def)
 nmap gv <Plug>(rust-def-vertical)
-nmap <F5> :RB<CR>
+nmap <F5> :call RunDebugger()<CR>
 
 
 " -----------------------------------------------------------------------------
@@ -93,7 +93,7 @@ function FindTestExecutable(test_func_name) abort
                     return test_exec
                 endif
                 let l:test_name = split(fragments[2], '`')[0]
-                return join([test_exec, test_name], " ")
+                return test_exec
             endif
 
             " If there was more than zero tests run
@@ -107,12 +107,18 @@ function FindTestExecutable(test_func_name) abort
     return ''
 endfunction
 
-function RunDebuggerFromTest()
-    echo "building ..."
+" function RunDebuggerFromTest()
+function RunDebugger()
     let l:test_func_name = FindTestFunctionNameUnderCursor()
-    let l:test_bin_path = FindTestExecutable(l:test_func_name)
-    let l:command = ':VBGstartGDB ' . test_bin_path
-    execute command
+    echo l:test_func_name
+
+    if len(l:test_func_name)
+        let l:test_bin_path = FindTestExecutable(l:test_func_name)
+        call vebugger#gdb#start(l:test_bin_path , {'args': [l:test_func_name], 'entry':l:test_func_name})
+    else
+        call RunDebuggerFromMain()
+    endif
+
 endfunction
 
 function DebugProject()
@@ -133,6 +139,3 @@ function RunDebuggerFromMain()
     let l:output = system(command)
     call DebugProject()
 endfunction
-
-:command! RD call RunDebuggerFromTest()
-:command! RB call RunDebuggerFromMain()

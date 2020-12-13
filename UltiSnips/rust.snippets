@@ -4,6 +4,27 @@ snippet cmt
 // -----------------------------------------------------------------------------$0
 endsnippet
 
+snippet testmod 
+#[cfg(test)]
+mod test {
+	use Super::*;
+
+	$1
+}
+endsnippet
+
+
+snippet react
+fn react(&mut self, reaction: Reaction<Self::Input>) -> Reaction<Self::Output> {
+	match reaction {
+		Reaction::Value(val) => Reaction::Value(val),
+		Reaction::Continue => Reaction::Continue,
+		Reaction::Event(ev) => Reaction::Event(ev),
+		Reaction::Error => Reaction::Error,
+	}
+}
+endsnippet
+
 snippet impit
 impl Iterator for $1 {
 	type Item = $0;
@@ -18,21 +39,6 @@ snippet db "debug macro"
 dbg!(${0:${VISUAL}});
 endsnippet
 
-
-snippet react "impl react"
-fn react(&mut self, reaction: Reaction<Self::Input>) -> Reaction<Self::Output> {
-	use Reaction::*;
-	match reaction {
-		Value(val) => {
-			Continue
-		}
-		Event(event) => {
-			event.into()
-		}
-		Continue => Continue,
-	}
-}
-endsnippet
 
 snippet gdclass "Create a Godot NativeObject"
 #[derive(NativeClass)]

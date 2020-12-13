@@ -28,10 +28,10 @@ PACKAGES=(
     # ["haskell-vim"]="neovimhaskell"
 
     # Elixir
-    ["vim-elixir"]="elixir-editors"
+    # ["vim-elixir"]="elixir-editors"
     
     # OCaml
-    ["vim-ocaml"]="ocaml"
+    # ["vim-ocaml"]="ocaml"
 )
 
 for package in ${!PACKAGES[@]}
