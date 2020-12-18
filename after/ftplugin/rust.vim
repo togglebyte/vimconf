@@ -15,7 +15,7 @@ function! RustDocs()
 endfunction
 
 function! RustMan(word)
-    let l:command  = ':vertical term ++close rusty-man ' . a:word
+    let l:command  = ':term ++close rusty-man ' . a:word
     execute command
 endfunction
 

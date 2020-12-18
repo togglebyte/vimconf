@@ -17,10 +17,9 @@ endsnippet
 snippet react
 fn react(&mut self, reaction: Reaction<Self::Input>) -> Reaction<Self::Output> {
 	match reaction {
+		Reaction::Event(ev) => Reaction::Event(ev),
 		Reaction::Value(val) => Reaction::Value(val),
 		Reaction::Continue => Reaction::Continue,
-		Reaction::Event(ev) => Reaction::Event(ev),
-		Reaction::Error => Reaction::Error,
 	}
 }
 endsnippet

@@ -9,6 +9,7 @@ declare -A PACKAGES
 PACKAGES=(
     ["vim-surround"]="tpope"
     ["vim-commentary"]="tpope"
+    ["vim-fugitive"]="tpope"
     ["ultisnips"]="SirVer"
     ["vim-highlightedyank"]="machakann"
     ["vimwiki"]="vimwiki"
