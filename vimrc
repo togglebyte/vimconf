@@ -7,7 +7,7 @@ noremap <Right> <Nop>
 " -----------------------------------------------------------------------------
 "     - Colours -
 " -----------------------------------------------------------------------------
-colorscheme hagsteel
+colorscheme togglebit
 
 
 " -----------------------------------------------------------------------------
@@ -60,7 +60,6 @@ set mouse=
 set noswapfile
 set colorcolumn=110
 set nosmd
-set noru
 set hidden
 noremap <F1> :echo "--- lol, accidental F1 ---"<CR>
 
