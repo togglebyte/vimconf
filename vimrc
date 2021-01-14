@@ -49,7 +49,7 @@ set foldenable
 set foldlevelstart=10
 set foldnestmax=10
 set noruler
-set laststatus=2
+set laststatus=0
 set splitright
 set splitbelow
 set backspace=indent,eol,start
@@ -353,3 +353,8 @@ nmap <C-f> :Find
 "     - FZF -
 " -----------------------------------------------------------------------------
 nmap <C-p> :FZF<cr>
+
+" -----------------------------------------------------------------------------
+"     - Neovim specifics -
+" -----------------------------------------------------------------------------
+set guicursor=
