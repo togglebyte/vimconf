@@ -25,12 +25,11 @@ endfunction
 "     - Key mappings -
 " -----------------------------------------------------------------------------
 nmap <S-k> :call RustDocs()<CR>
-nmap <C-b> :!clear;cargo check<CR>
+nmap <C-b> :Cargo check<CR>
 nmap <Leader>} ysiw}
-nmap <Leader>x :!clear;cargo run<CR>
-nmap <Leader>X :!clear;env RUST_BACKTRACE=1 cargo run<CR>
+nmap <Leader>x :Cargo run<CR>
 nmap <Leader>f :RustFmt<CR>
-nmap <Leader>b :!clear;cargo test -- --nocapture<CR>
+nmap <Leader>b :Cargo test -- --nocapture<CR>
 nmap <Leader>B :!clear;env RUST_BACKTRACE=1 cargo test -- --nocapture<CR>
 nmap gd <Plug>(rust-def)
 nmap gv <Plug>(rust-def-vertical)
