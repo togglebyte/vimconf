@@ -4,7 +4,7 @@
 set nospell
 set nowrap
 set textwidth=99
-set makeprg=gcc\ %
+set makeprg=zig\ c++\ %
 
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
@@ -19,8 +19,8 @@ let g:vebugger_path_gdb = 'gdb'
 " -----------------------------------------------------------------------------
 "     - Key mappings -
 " -----------------------------------------------------------------------------
-nmap <Leader>x :!clear;gcc % && ./a.out<cr>
-nmap <C-b> :!clear;gcc %<cR>
+nmap <Leader>x :!clear;zig c++ % && ./a.out<cr>
+nmap <C-b> :!clear;zig c++ %<cR>
 
 
 " -----------------------------------------------------------------------------

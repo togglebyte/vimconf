@@ -358,3 +358,19 @@ nmap <C-p> :FZF<cr>
 "     - Neovim specifics -
 " -----------------------------------------------------------------------------
 set guicursor=
+
+" -----------------------------------------------------------------------------
+"     - Snake case -
+" -----------------------------------------------------------------------------
+function! SnakeCase()
+    let word = expand("<cword>")
+    let word = substitute(l:word,'::','/','g')
+    let word = substitute(word,'\(\u\+\)\(\u\l\)','\1_\2','g')
+    let word = substitute(word,'\(\l\|\d\)\(\u\)','\1_\2','g')
+    let word = substitute(word,'[.-]','_','g')
+    let word = tolower(word)
+    echo l:word
+    return word
+endfunction
+
+command! Snake call SnakeCase()

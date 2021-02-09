@@ -17,9 +17,10 @@ PACKAGES=(
     # Rust
     ["rust.vim"]="rust-lang"
     ["vim-racer"]="racer-rust"
+
+    # GDB
     ["vim-vebugger"]="hagsteel"
     ["vimproc.vim"]="Shougo"
-    # ["completor.vim"]="maralla"
 
     # Zig
     # ["zig.vim"]="ziglang"
