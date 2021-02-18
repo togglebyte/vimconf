@@ -66,6 +66,11 @@ noremap <F1> :echo "--- lol, accidental F1 ---"<CR>
 let g:netrw_banner=0
 
 " -----------------------------------------------------------------------------
+"     - Generic key bindings -
+" -----------------------------------------------------------------------------
+nmap <Leader>} ysiw}
+
+" -----------------------------------------------------------------------------
 "     - Ignore the following when expanding wildcards -
 " -----------------------------------------------------------------------------
 set wildignore+=*/target/*,*/tmp/*,*.swp,*.pyc,*__pycache__/* 
@@ -76,54 +81,6 @@ set wildignore+=*/target/*,*/tmp/*,*.swp,*.pyc,*__pycache__/*
 nmap <leader>g :copen<CR>
 nmap <C-p> :cprevious<CR>
 nmap <C-n> :cnext<CR>
-
-" function ShowErrorThingy()
-"     " Store current buffer
-"     let l:current_no = bufwinnr('%')
-
-"     let l:qf_offset = get(getqflist({'idx': 0}), 'idx', 0)
-"     echo "id is " . l:qf_offset
-"     let l:errs = getqflist()[l:qf_offset:]
-
-"     let l:buf_name = "ErrorFlorp"
-"     if !bufloaded(l:buf_name)
-"         :new
-"         :wincmd J
-"         :setlocal buftype=nofile
-"         :setlocal bufhidden=hide
-"         :setlocal noswapfile
-"         :setlocal nobuflisted
-"         :setlocal ft=rust
-"         silent let l:rename = ':file ' . l:buf_name
-"         silent exe l:rename
-"     endif
-
-"     " Get the buffer number
-"     let l:buf_info = getbufinfo(l:buf_name)
-"     let l:err_buf_no = l:buf_info[0].bufnr
-"     exe l:err_buf_no . "wincmd w"
-
-"     " Insert error / warning
-"     :normal ggdG
-"     let l:failed = append(0, getqflist()[l:qf_offset - 1].text)
-"     for item in l:errs
-"         if item["type"] == "E" || item["type"] == "W"
-"             break
-"         endif
-"         let l:failed = append(0, item.text)
-"         " l:lines->add("item.text")
-"     endfor
-
-"     " Resize the buffer
-"     " var size = max([min([line("$"), max_len]), max_len])
-"     let l:size = line("$")
-"     exe ":" .. l:size .. "wincmd _"
-"     :normal gg
-
-"     " Go back to original buffer
-"     exe l:current_no . "wincmd w"
-" endfun
-
 
 " -----------------------------------------------------------------------------
 "     - Resizing panes -

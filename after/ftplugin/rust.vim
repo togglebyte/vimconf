@@ -26,7 +26,6 @@ endfunction
 " -----------------------------------------------------------------------------
 nmap <S-k> :call RustDocs()<CR>
 nmap <C-b> :!clear; cargo check<CR>
-nmap <Leader>} ysiw}
 nmap <Leader>x :!clear; cargo run<CR>
 nmap <Leader>f :RustFmt<CR>
 nmap <Leader>b :!clear; cargo test -- --nocapture<CR>
