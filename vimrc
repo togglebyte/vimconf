@@ -95,7 +95,7 @@ nmap <C-j> :resize -4<CR>
 "     - Scratch buffer -
 "     Create a new scrach buffer
 " -----------------------------------------------------------------------------
-functio CreateScratchBuffer(vertical)
+function CreateScratchBuffer(vertical)
     if a:vertical == 1 
         :vnew
     else
