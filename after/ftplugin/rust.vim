@@ -41,7 +41,6 @@ nmap <F5> :call RunDebugger()<CR>
 ia pp eprintln!("{:?}",);<Left><Left>
 ia cmt cmt<Leader>t<Left>
 ia dd #[derive(Debug)]
-ia col collect::<Vec<_>>()
 
 
 " -----------------------------------------------------------------------------

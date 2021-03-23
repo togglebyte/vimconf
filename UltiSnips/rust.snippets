@@ -13,6 +13,13 @@ mod test {
 }
 endsnippet
 
+snippet test
+#[test]
+fn $1() {
+	assert_eq!(expected, actual);
+}
+endsnippet
+
 
 snippet react
 fn react(&mut self, reaction: Reaction<Self::Input>) -> Reaction<Self::Output> {

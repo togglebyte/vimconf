@@ -1,8 +1,8 @@
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
+noremap <Up> <Nop>
 noremap <Right> <Nop>
-
 
 " -----------------------------------------------------------------------------
 "     - Colours -
@@ -25,7 +25,6 @@ nmap <F6> :VBGevalWordUnderCursor<CR>
 " -----------------------------------------------------------------------------
 set nonumber
 set norelativenumber
-
 
 " -----------------------------------------------------------------------------
 "     - Default settings -
@@ -79,7 +78,7 @@ set wildignore+=*/target/*,*/tmp/*,*.swp,*.pyc,*__pycache__/*
 "     - Errors / warnings -
 " -----------------------------------------------------------------------------
 nmap <leader>g :copen<CR>
-nmap <C-p> :cprevious<CR>
+" nmap <C-?> :cprevious<CR> 
 nmap <C-n> :cnext<CR>
 
 " -----------------------------------------------------------------------------
