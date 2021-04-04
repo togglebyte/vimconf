@@ -41,57 +41,41 @@ impl Iterator for $1 {
 }
 endsnippet
 
-snippet db "debug macro"
-dbg!(${0:${VISUAL}});
-endsnippet
+snippet initnight "Bootstrap NightmareGL setup"
+use nightmaregl::events::{Event, Key as WinitKey, KeyState, LoopAction};
+use nightmaregl::{Color, Context, Position, Result, Size, Animation, Sprite, Renderer, Viewport, Rotation};
+use nightmaregl::texture::{Wrap, Texture};
 
+fn main() -> Result<()> {
+	let (eventloop, mut context) = Context::builder("Best game ever!")
+		.build()?;
 
-snippet gdclass "Create a Godot NativeObject"
-#[derive(NativeClass)]
-#[inherit($2)]
-pub struct $1 {
+	let window_size = context.window_size();
+	let mut viewport = Viewport::new(Position::zero(), window_size);
+	let mut renderer = Renderer::default(&mut context)?;
+
+	eventloop.run(move |event| {
+		match event {
+			Event::Draw(dt) => {
+				context.clear(Color::grey());
+
+				// renderer.render(
+				// 	&texture,
+				// 	&vec![sprite.vertex_data()],
+				// 	&viewport,
+				// 	&mut context
+				// );
+
+				context.swap_buffers();
+			}
+			_ => {}
+		}
+
+		LoopAction::Continue
+	});
+
+	Ok(())
 }
-
-#[methods]
-impl $1 {
-    pub fn new(_owner: &$2) -> Self {
-        Self { }
-    }
-
-    #[export]
-    pub fn _ready(&self, owner: &$2) {
-    }
-
-    #[export]
-    pub fn _unhandled_input(&self, owner: &$2, event: Ref<InputEvent>) {
-    }
-
-    #[export]
-    pub fn _process(&self, owner: &$2, delta: f64) {
-    }
-
-    #[export]
-    pub fn _physics_process(&self, owner: &$2, delta: f64) {
-    }
-}$0
-endsnippet
-
-snippet gdinit "Bootstrap Godot Native init"
-use gdnative::*;
-
-
-fn init(handle: init::InitHandle) {
-    handle.add_class::<>();
-}
-
-godot_gdnative_init!();
-godot_nativescript_init!(init);
-godot_gdnative_terminate!();
-endsnippet
-
-snippet usegd "Boilerplate gdnative use statement"
-use gdnative::prelude::*;
-use gdnative::api::InputEvent;
 endsnippet
 
 snippet default "debug macro"
