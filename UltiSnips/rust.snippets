@@ -4,6 +4,18 @@ snippet cmt
 // -----------------------------------------------------------------------------$0
 endsnippet
 
+snippet struct "Create a struct"
+struct $1 {
+}
+
+impl $1 {
+    fn new() -> Self {
+	    Self {
+		}
+	}
+}
+endsnippet
+
 snippet testmod 
 #[cfg(test)]
 mod test {
@@ -68,11 +80,14 @@ fn main() -> Result<()> {
 
 				context.swap_buffers();
 			}
+			Event::Char('q') => return LoopAction::Quit,
 			_ => {}
 		}
 
 		LoopAction::Continue
 	});
+
+	Ok(())
 }
 endsnippet
 
@@ -82,6 +97,14 @@ impl Default for ${0:${VISUAL}} {
 		Self {
 		}
 	}
+}
+endsnippet
+
+
+snippet tokiomain "main function"
+#[tokio::main]
+async fn main() {
+${0:${VISUAL}}
 }
 endsnippet
 

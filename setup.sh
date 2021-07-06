@@ -17,22 +17,6 @@ PACKAGES=(
     # Rust
     ["rust.vim"]="rust-lang"
     ["vim-racer"]="racer-rust"
-
-    # GDB
-    ["vim-vebugger"]="hagsteel"
-    ["vimproc.vim"]="Shougo"
-
-    # Zig
-    # ["zig.vim"]="ziglang"
-
-    # Haskell
-    # ["haskell-vim"]="neovimhaskell"
-
-    # Elixir
-    # ["vim-elixir"]="elixir-editors"
-    
-    # OCaml
-    # ["vim-ocaml"]="ocaml"
 )
 
 for package in ${!PACKAGES[@]}

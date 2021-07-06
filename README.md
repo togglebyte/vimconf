@@ -1,3 +1,8 @@
+# NOTE!
+
+I am currently using neovim.
+See https://github.com/togglebyte/nvim
+
 # Setup
 
 `setup.sh` requires bash 4+

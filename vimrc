@@ -17,14 +17,8 @@ nmap <F8> :VBGcontinue<CR>
 nmap <F9> :VBGstepOver<CR>
 nmap <F10> :VBGstepIn<CR>
 nmap <F6> :VBGevalWordUnderCursor<CR>
+packadd termdebug
 
-
-" -----------------------------------------------------------------------------
-"     - Line numbers -
-"     Use relative line numbers in insert mode
-" -----------------------------------------------------------------------------
-set nonumber
-set norelativenumber
 
 " -----------------------------------------------------------------------------
 "     - Default settings -
@@ -77,9 +71,8 @@ set wildignore+=*/target/*,*/tmp/*,*.swp,*.pyc,*__pycache__/*
 " -----------------------------------------------------------------------------
 "     - Errors / warnings -
 " -----------------------------------------------------------------------------
-nmap <leader>g :copen<CR>
-" nmap <C-?> :cprevious<CR> 
-nmap <C-n> :cnext<CR>
+nmap <LeaderC-p> :cprevious<CR> 
+nmap <Leader-n> :cnext<CR>
 
 " -----------------------------------------------------------------------------
 "     - Resizing panes -
